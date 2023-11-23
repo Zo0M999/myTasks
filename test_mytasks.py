@@ -11,7 +11,6 @@ class TestMyTasks(unittest.TestCase):
     def tearDown(self):
         self.myTasks._cursor.execute('DROP TABLE IF EXISTS mytasks')
         self.myTasks._db.commit()
-        self.myTasks.__del__()
 
     def test_show_tasks(self):
         self.myTasks.add_task(self.task_name, self.task_description)
