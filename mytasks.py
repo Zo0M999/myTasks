@@ -9,9 +9,9 @@ class MyTasks:
                 password="mysql",
             )
         self._cursor = self._db.cursor()
-        self.__setup_database()
+        self._setup_database()
 
-    def __setup_database(self):
+    def _setup_database(self):
         self._cursor.execute('CREATE DATABASE IF NOT EXISTS mytasks_db')
         self._cursor.execute('USE mytasks_db')
         self._cursor.execute("""
@@ -45,3 +45,14 @@ class MyTasks:
 
     def __del__(self):
         self._db.close()
+
+
+if __name__ == '__main__':
+    mytasks = MyTasks()
+    #mytasks.add_task('Task1', 'Description1')
+    all_tasks = mytasks.show_tasks()
+    print(dir(mytasks))
+    for task in all_tasks:
+        print(task)
+
+
