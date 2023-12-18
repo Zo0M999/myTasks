@@ -51,7 +51,6 @@ if __name__ == '__main__':
     mytasks = MyTasks()
     #mytasks.add_task('Task1', 'Description1')
     all_tasks = mytasks.show_tasks()
-    print(dir(mytasks))
     for task in all_tasks:
         print(task)
 
