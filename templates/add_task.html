@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <p>{{ info }}</p>
+    <form action="/add_task" method="post">
+        <label>Task name:</label>
+        <br>
+        <input type="text" name="task_name"  required>
+        <br>
+        <label>Task description:</label>
+        <br>
+        <textarea name="task_desc" rows=4 cols=30></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}

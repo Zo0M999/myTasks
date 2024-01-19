@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <p>{{ info }}</p>
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }}">
+            {{ msg }}
+        </div>
+    {% endfor %}
+    <form action="/comp_task" method="post">
+        <label>Task completed: </label>
+        <input type="text" name="task_name" required>
+
+        <button onclick="info()">
+            <img src="static/img/info.ico"/>
+        </button>
+        <script>
+            function info() {
+              alert('If you want to mark multiple completed tasks, enter task names by comma.\nExample: TaskName1, TaskName2, TestName3 etc.');
+            }
+        </script>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+{% endblock content %}

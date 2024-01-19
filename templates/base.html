@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="icon" href="{{url_for('static', filename='img/favicon.ico')}}" type="image/x-icon">
+<link type="text/css" href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>myTasksApp - {{ title }}</title>
+</head>
+<nav>
+    <div class="topnav">
+        {% for m in ["tasks", "add_task", "comp_task", "del_comp_task"] %}
+            <a href="/{{m}}">{{m}}</a>
+        {% endfor %}
+    </div>
+</nav>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
