@@ -8,7 +8,7 @@ import secrets
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 
-ui = FlaskUI(app, height=480, width=800)
+# ui = FlaskUI(app, height=480, width=800)
 
 
 @app.route('/')
